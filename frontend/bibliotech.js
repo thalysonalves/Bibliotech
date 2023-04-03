@@ -38,8 +38,13 @@ paragrafoTurmaAluno.innerText = livro.turmaDoAluno
 const paragrafoSerieAluno = document.createElement("p")
 paragrafoSerieAluno.innerText = livro.serieDoAluno
 
+
+
+
 const button = document.createElement("button")
 button.innerText = "receber"
+
+
 divInfo.append(paragrafoNomeLivro, paragrafoTomboLivro, paragrafoNomeAluno, paragrafoTurmaAluno, paragrafoSerieAluno)
 divLivro.append(divFiltro, divInfo)
 sectionLivrosUni.append(divLivro, button)
