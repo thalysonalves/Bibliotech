@@ -5,7 +5,8 @@ const corEmprestados = "#ff00f1"
 const livroShow = document.querySelector("#livroShow")
 
 
-fetch("dados.json").then((resposta) =>{
+
+fetch("./json/dados.json").then((resposta) =>{
  resposta.json().then((dados) =>{
   dados.livros.map((livro) =>{
   
@@ -38,15 +39,23 @@ paragrafoTurmaAluno.innerText = livro.turmaDoAluno
 const paragrafoSerieAluno = document.createElement("p")
 paragrafoSerieAluno.innerText = livro.serieDoAluno
 
-
-
-
 const button = document.createElement("button")
-button.innerText = "receber"
+button.classList.add("btnReceber")
 
+const icon = document.createElement("ion-icon")
+icon.name = "checkmark-done-outline"
+icon.style.color = "#fff"
+icon.style.height = "55%"
+icon.style.width = "55%"
+
+// remover elemento
+button.onclick = () =>{
+  livroShow.removeChild(sectionLivrosUni)
+}
 
 divInfo.append(paragrafoNomeLivro, paragrafoTomboLivro, paragrafoNomeAluno, paragrafoTurmaAluno, paragrafoSerieAluno)
 divLivro.append(divFiltro, divInfo)
+button.appendChild(icon)
 sectionLivrosUni.append(divLivro, button)
 
 livroShow.appendChild(sectionLivrosUni)
@@ -55,4 +64,25 @@ livroShow.appendChild(sectionLivrosUni)
 })
 
 
+const barraDePesquisaHistorico = document.querySelector('#search')
+const livroUni = document.querySelector(".livroUni")
+const infoParagrafos = document.querySelector(".info")
+const livro = document.querySelector(".livro")
+
+barraDePesquisaHistorico.addEventListener('input', function(event) {
+  
+  const inputValue = event.target.value.trim().toLowerCase()
+  Array.from(livroShow.children)
+  .filter(livroUnico => !livroUnico.textContent.toLowerCase().includes(inputValue)) 
+  .forEach(livroUnico =>{
+   livroUnico.style.display = "none"
+  })
+  
+  Array.from(livroShow.children)
+  .filter(livroUnico => livroUnico.textContent.toLowerCase().includes(inputValue)) 
+  .forEach(livroUnico =>{
+   livroUnico.style.display = "flex"
+  })
+ 
+});
 

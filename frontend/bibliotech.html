@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliotech</title>
-    <link rel="stylesheet" href="bibliotech.css">
+    <link rel="stylesheet" href="./css/bibliotech.css">
+    <link rel="stylesheet" href="./css/historicoMain.css">
+    <link rel="stylesheet" href="./css/emprestimoMain.css">
+    <link rel="stylesheet" href="./css/acervoMain.css">
+    <link rel="stylesheet" href="./css/inicioMain.css">
     <!-- para tabela -->
-    <link rel="stylesheet" href="listaHistorico.css">
-
+    <link rel="stylesheet" href="./css/listaHistorico.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <section class="container" data-set="light">
+    <section class="container">
         <aside class="aside" id="aside">
             <section class="parteSuperior">
                 <div class="divImgLogo">
@@ -25,29 +28,32 @@
                 </div>
                 <div class="divContent">
                  
-                 
-                 
+ 
                     <button class="btnMain" id="btnMain1">
-                        <img src="img/inicio.png" class="icon">
-                        <h5>Início</h5>
+                        <img src="img/inicio.png" class="icon" id="btnMainImg1">
+                        <h5  id="btnMainH1">Início</h5>
                     </button>
                     
                     <button class="btnMain" id="btnMain2">
-                        <img src="img/historico.png" class="icon">
-                        <h5>Histórico</h5>
+                        <img src="img/historico.png" class="icon"  id="btnMainImg2">
+                        <h5 id="btnMainH2">Histórico</h5>
                     </button>
-                    
+
                     <button class="btnMain" id="btnMain3">
-                        <img src="img/agenda.png" class="icon">
-                        <h5>Acervo</h5>
+                        <img src="img/historico.png" class="icon"  id="btnMainImg3">
+                        <h5  id="btnMainH3">Empréstimos</h5>
                     </button>
-                    
+
+                    <button class="btnMain" id="btnMain4">
+                        <img src="img/acervo.png" class="icon"  id="btnMainImg4">
+                        <h5  id="btnMainH4">Acervo</h5>
+                    </button>
                     
                     
                 </div>
             </section>
             <section class="parteInferior">
-                <button id="themeSwitcher">Switch Theme Dark/Light</button>
+                <input type="checkbox">
             </section>
             
             
@@ -56,66 +62,87 @@
             <!-- MAIN INICIO -->
             <section class="mainInicio">
                 <div class="mainInicioSuperior">
-                    <h2>Inicio</h2>
-                    <!-- <button class="add">Adicionar</button> -->
+                    <h2>Biblioteca</h2>
                 </div>
                 <div class="mainInicioCenter">
                     
                         <buttton class="balao" id="balao1">
-                            <p>Total de livros</p>
-                            <p class="pp">
+                            <p class="pTitle">Total de livros</p>
+                            <p class="pNum">
                                 0
                             </p>
                         </buttton>
                         <buttton class="balao" id="balao2">
-                            <p>Emprestimos</p>
-                            <p class="pp">
+                            <p class="pTitle">Emprestimos</p>
+                            <p class="pNum">
                                 0
                             </p>
                         </buttton>
                         <buttton class="balao" id="balao3">
-                            <p>Pendentes</p>
-                            <p class="pp">
+                            <p class="pTitle">Pendentes</p>
+                            <p class="pNum">
                                 0
                             </p>
                         </buttton>
                     
                 </div>
                 <div class="mainInicioInferior">
-                    <h3>Anotações</h3>
-                    <textarea name="" class="notePad" id="notePad" 
-                    cols="30" rows="10"></textarea>
-                    <button class="btnAddNotePad">
-                    <ion-icon name="add-outline"></ion-icon>
-                    </button>
+                  
+
+                    <div class="conteudo">
+                        <div class="topo">
+                            <input type="text" id="inputNovaTarefa" placeholder="Adicione uma nova anotação">
+                            <button id="btnAddTarefa">
+                                <i class='bx bx-bookmark-alt-plus' ></i>
+                                <ion-icon name="add-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                        <ul id="listaTarefa">
+                            <!-- <li>
+                                <span class="textoTarefa">Tarefa 1</span>
+                                <div>
+                                    <button class="btnAcao">
+                                        <i class="bx bxs-edit" ></i>
+                                        <ion-icon name="create-outline"></ion-icon>
+                                    </button>
+                                    <button class="btnAcao">
+                                        <i class="bx bx-trash" ></i>
+                                        <ion-icon name="trash-outline"></ion-icon>
+                                    </button>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                    
                 </div>
             </section>
+           
             <!-- MAIN HISTORICO -->
             
             <section class="mainHistorico">
                 <div class="mainHistoricoSuperior">
-                 <h2>Histórico</h2>
-                 <input type="search" name="search" id="search">
+                    <h2>Histórico</h2>
+                    <input type="search" name="search" id="search" placeholder="Digite o nome do seu livro">
                 </div>
                        
                 <div class="mainHistoricoCenter">       
-                 <div>
-                  <h4>Disponíveis</h4>
-                  <div class="corFiltro" id="corFiltroTotal"></div>
-                 </div>
-                 <div>
-                  <h4>Pendentes</h4>
-                  <div class="corFiltro" id="corFiltroPendente"></div>
-                 </div>
-                 <div>
-                  <h4>Emprestados</h4>
-                  <div class="corFiltro" id="corFiltroEmprestado"></div>
-                 </div>
+                    <div>
+                        <h4>Pendentes</h4>
+                        <div class="corFiltro" id="corFiltroPendente"></div>
+                    </div>
+                    <div>
+                        <h4>Emprestados</h4>
+                        <div class="corFiltro" id="corFiltroEmprestado"></div>
+                    </div>
                 </div>
                 
                 
                 <div class="mainHistoricoInferior">
                  <div id="livroShow" class="livroShow">
+                  
+                        
+
+
 
                  </div>
                 </div>
@@ -123,16 +150,29 @@
                 
             </section>
             
-            <!-- MAIN AGENDAMENTO -->
+            <!-- MAIN EMPRESTIMOS -->
             
-            <section class="mainAgendamento">
-             <div class="mainAgendamentoSuperior"></div>
-             <div class="mainAgendamentoCenter"></div>
-             <div class="mainAgendamentoInferior"></div>
+            <section class="mainEmprestimo">
+             <div class="mainEmprestimosSuperior"><h5>Deve</h5></div>
+             <div class="mainEmprestimosCenter"></div>
+             <div class="mainEmprestimosInferior"></div>
             </section>
+
+            
+
+            <!-- MAIN ACERVOS -->
+            
+            <section class="mainAcervo">
+                <div class="mainAcervoSuperior"><h1>Acervo</h1></div>
+                <div class="mainAcervoCenter"></div>
+                <div class="mainAcervoInferior"></div>
+             </section>
         </main>
     </section>
-    <script src="bibliotech.js"></script>
-    <script src="btnMainContent.js"></script>
+    <!-- <script src="javascript/anotacoes.js"></script> -->
+    <script src="js/bibliotech.js"></script>
+    <script src="js/btnMainContent.js"></script>
+    <script src="js/headerMobile.js"></script>
+    <script src="js/bloco.js"></script>
 </body>
 </html>
