@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url("acervo.css");
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans serif;
+    font-family: 'Inter', sans-serif;
 }
 :root{
-  --corFiltroAgendados: #6affb6;
-  --corFiltroDisponiveis: #ff352b;
-  --corFiltroPendentes: #4740ff;
-  --corFiltroEmprestados: #ff2bdc;
+    --corFiltroPendente: #662bff;
+    --corFiltroEmprestado: #ff15fc;
 }
 .container{
     min-height: 100vh;
@@ -20,7 +19,7 @@
 .aside{
     height: 100vh;
     width: 20vw;
-    box-shadow: 0px 3px 3px #fff;
+    box-shadow: -2px 3px 3px #fff;
     display: flex;
     flex-direction: column;
 }
@@ -61,7 +60,6 @@
 .divContent{
     display: flex;
     flex-direction: column;
-    gap: 5px;
     width: 100%;
     height: 30%;
 }
@@ -76,14 +74,14 @@
     color: #fff;
     position: relative;
     border: none;
-
 }
 .divContent .btnMain:focus{
-    background-color: #fff;
+    background-color: #37393F;
     color: #000;
+    outline: none;
 }
 .divContent .btnMain h5{
-    font-size: larger;
+    font-size: 137%;
     font-weight: 700;
     position: absolute;
     left: 50%;
@@ -91,23 +89,16 @@
     transform: translate(-50%, -50%);
 }
 .parteSuperior .icon{
-    width: 10%;
+    width: 11.2%;
     height: 80%;
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 8%;
     transform: translate(-50%, -50%);
 }
 /* PARTE INFERIOR ASIDE */
 
-.parteInferior{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 30%;
-    width: 100%;
-    
-}
+
 
 /* PARTE MAIN */
 .main{
@@ -128,7 +119,7 @@
 }
 .mainInicioSuperior{
     width: 100%;
-    height: 10%;
+    height: 13%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -143,7 +134,7 @@
 }
 .mainInicioCenter{
     width: 100%;
-    height: 40%;
+    height: 30%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -154,7 +145,7 @@
 }
 .mainInicioCenter .balao{
     border: solid 2px black;
-    height: 70%;
+    height: 95%;
     width: 25%;
     border-radius: 20px;
     display: flex;
@@ -184,7 +175,7 @@
 }
 .mainInicioInferior{
     width: 100%;
-    height: 50%;
+    height: 40%;
     border-radius: 20px;
 }
 
@@ -308,14 +299,14 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding: 5%;
-    gap: 3%;
+    
 }
 
 .mainHistoricoSuperior{
  display: flex;
  flex-direction: row;
  justify-content: space-between;
- align-items: center;
+ align-items: flex-end;
  height: 10%;
  width: 100%;
  color: #fff;
@@ -333,30 +324,31 @@
  width: 100%;
  color: #fff;
 }
-.mainHistoricoInferior{ 
- height: 80%;
- width: 100%;
+.divFiltroMenu{
+    padding: 2% 3%;
+    cursor: pointer;
 }
-#corFiltroAgendado{
- background: var(--corFiltroAgendados);
- width: 100%;
- height: 4px;
-}
-
-#corFiltroTotal{
- background: var(--corFiltroDisponiveis);
- width: 100%;
- height: 4px;
+.divFiltroMenu h4{
+    color: #fff;
+    font-size: 140%;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
 }
 #corFiltroPendente{
- background: var(--corFiltroPendentes);
- width: 100%;
- height: 4px;
-}
+    background: var(--corFiltroPendente);
+    width: 100%;
+    height: 4px;
+   }
 #corFiltroEmprestado{
- background: var(--corFiltroEmprestados);
+    background: var(--corFiltroEmprestado);
+    width: 100%;
+    height: 4px;
+   }
+   
+.mainHistoricoInferior{ 
+ height: 70%;
  width: 100%;
- height: 4px;
 }
 
 
@@ -364,148 +356,212 @@
     width: 100%;
     height: 100%;
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     padding: 5%;
-    gap: 3%;
 }
-
-.mainAcervo{
-     width: 100%;
+.mainEmprestimo .mainEmprestimosLeft{
+    height: 80%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-around;
+    position: relative;
+}
+.mainEmprestimosLeft h3{
+    color: #fff;
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+.formNovoEmprestimo{
+    width: 100%;
+    height: 60%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+}
+.divInputForm{
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: left;
+    width: 100%;
+    height: 16%;
+    gap: 5px;
+}
+.divInputForm label{
+    font-size: 60%;
+    color: #fff;
+    font-weight: 900;
+}
+.divInputForm input{
+    width: 100%;
+    height: 60%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #2b2b2b;
+}
+.divInputFormDouble{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 16%;
+    gap: 2%;
+}
+.divInputFormDouble div{
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: left;
+    width: 50%;
     height: 100%;
-    display: none;
+    gap: 5px;
+}
+.divInputFormDouble div label{
+    font-size: 60%;
+    color: #fff;
+    font-weight: 900;
+}
+.divInputFormDouble div select{
+    width: 100%;
+    height: 55%;
+    border: none;
+    border-radius: 5px;
+}
+.btnEnviarEmprestimo{
+    display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: 5%;
-    gap: 3%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 16%;
 }
-
-
-@media screen and (max-width: 600px){
- .container{
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
- }
- .aside{
-  width: 100%;
-  height: 15%;
-  display: flex;
-  flex-direction: row;
- }
- .aside .parteSuperior{
-  display: flex;
-  flex-direction: row;
-  width: 95%;
-  height: 100%;
- }
- .aside .parteSuperior .divImgLogo{
-  width: 20%;
-  height: 100%;
-  padding: 1%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
- .aside .parteSuperior .divImgLogo img{
-  width: 80%;
-  height: 80%;
- }
- .aside .parteSuperior .divPerfil {
-  width: 30%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
- }
- .aside .parteSuperior .divPerfil h3{
-  font-size: 0.7em;
- }
- .aside .parteSuperior .divContent{
-  width: 30%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
- .aside .parteSuperior .divContent .btnMain{
-  display: none;
- }
- .aside .parteSuperior .divContent.active{
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
- }
- 
- .aside .parteSuperior .divContent.active .btnMain{
-  width: 20%;
-  display: flex;
-  box-shadow: 0 0 5px #fff;
-  border: none;
- }
- .aside .parteSuperior .divContent.active .btnMain img{
-  display: none;
- }
- .aside .parteSuperior .divContent.active .btnMain h5{
-  font-size: 0.8rem;
- }
- .aside .parteSuperior .divContent .iconMain{
-  display: flex;
-  width: 80%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  border-radius: 5px;
-  font-size: 2.2rem;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
- .aside .parteSuperior .divContent.active .iconMain{
-  display: none;
- }
- 
- .dialogMobileMenu::backdrop{
-  background: #000;
- }
- .dialogMobileMenu{
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 65%;
-  width: 55%;
-  display: flex;
-  flex-direction: column;
- }
- 
- .aside .parteInferior{
-  display: flex;
-  width: 5%;
-  height: 100%;
- }
- .main{
-  width: 100%;
-  height: 85%;
-  /* border: solid 3px red; */
- }
- .mainInicio{
-  height: 100%;
-  width: 100%;
- }
- .mainInicioCenter .balao{
-  width: 30%;
-  height: 60%;
- }
- .pTitle{
-  font-size: 0.85rem;
- }
- .pNum{
-  font-size: 3.5rem;
- }
+.btnConfirmeEmprestimo{
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #242529;
+    height: 75%;
+    width: 55%;
+    color: #000;
+    font-size: larger;
+    background-color: #fff;
+    
 }
+.mainEmprestimo .mainEmprestimosRight{
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+.calendario{
+    width: 100%;
+    height: 70%;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  }
+  .wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 22px 25px 8px;
+    height: 14%;
+    justify-content: space-between;
+  }
+  header .icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+    background-color: #aaa;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  header .icons p{
+    height: 100%;
+    width: 29%;
+    cursor: pointer;
+    color: #878787;
+    font-size: 97%;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .current-date{
+    font-size: 120%;
+    font-weight: 500;
+    background-color: #05704f;
+    border-radius: 20px;
+    width: 42%;
+    padding: 0% 2%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .calendar{
+    padding: 20px;
+  }
+  .calendar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+  }
+  .calendar .days{
+    margin-bottom: 20px;
+  }
+  .calendar li{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+  }
+  .calendar .weeks li{
+    font-weight: 500;
+    cursor: default;
+  }
+  .calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+  }
+  .days li.inactive{
+    color: #aaa;
+    border-radius: 1px;
+  }
+  .days li.active{
+    color: #fff;
+  }
+  .days li.active::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 190%;
+    width: 60%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    color: blue;
+    background-color: #05704F;
+}
+  #btnConfiData img{
+    height: 85%;
+    width: 85%;
+    position: absolute;
+  }

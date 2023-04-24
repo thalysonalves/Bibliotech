@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliotech</title>
     <link rel="stylesheet" href="./css/bibliotech.css">
-    <link rel="stylesheet" href="./css/historicoMain.css">
-    <link rel="stylesheet" href="./css/emprestimoMain.css">
-    <link rel="stylesheet" href="./css/acervoMain.css">
-    <link rel="stylesheet" href="./css/inicioMain.css">
     <!-- para tabela -->
     <link rel="stylesheet" href="./css/listaHistorico.css">
+    
+    
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -29,7 +28,7 @@
                 <div class="divContent">
                  
  
-                    <button class="btnMain" id="btnMain1" autofocus>
+                    <button class="btnMain" id="btnMain1" autofocus >
                         <img src="img/inicio.png" class="icon" id="btnMainImg1">
                         <h5  id="btnMainH1">Início</h5>
                     </button>
@@ -40,7 +39,7 @@
                     </button>
 
                     <button class="btnMain" id="btnMain3">
-                        <img src="img/historico.png" class="icon"  id="btnMainImg3">
+                        <img src="img/emprestimo.png" class="icon"  id="btnMainImg3">
                         <h5  id="btnMainH3">Empréstimos</h5>
                     </button>
 
@@ -52,10 +51,6 @@
                     
                 </div>
             </section>
-            <section class="parteInferior">
-                <input type="checkbox">
-            </section>
-            
             
         </aside>
         <main class="main" id="main">
@@ -114,25 +109,19 @@
                 </div>
                        
                 <div class="mainHistoricoCenter">       
-                    <div>
-                        <h4>Pendentes</h4>
+                    <div class="divFiltroMenu" id="filtroPendente">
+                        <h4 id="textPende">Pendentes</h4>
                         <div class="corFiltro" id="corFiltroPendente"></div>
                     </div>
-                    <div>
-                        <h4>Emprestados</h4>
+                    <div class="divFiltroMenu" id="filtroEmprestado">
+                        <h4 id="textEmpre">Emprestados</h4>
                         <div class="corFiltro" id="corFiltroEmprestado"></div>
                     </div>
                 </div>
                 
                 
                 <div class="mainHistoricoInferior">
-                 <div id="livroShow" class="livroShow">
-                  
-                        
-
-
-
-                 </div>
+                 <div id="livroShow" class="livroShow"></div>
                 </div>
                 
                 
@@ -141,9 +130,81 @@
             <!-- MAIN EMPRESTIMOS -->
             
             <section class="mainEmprestimo">
-             <div class="mainEmprestimosSuperior"><h5>Deve</h5></div>
-             <div class="mainEmprestimosCenter"></div>
-             <div class="mainEmprestimosInferior"></div>
+             <div class="mainEmprestimosLeft">
+                <h3>Empréstimo de livros</h3>
+                
+                <form class="formNovoEmprestimo">
+                    <div class="divInputForm">
+                        <label for="inputEmprestimoLivro">Nome do livro</label>
+                        <input type="text" name="inputEmprestimoLivro" id="inputEmprestimoLivro" class="inputEmprestimoLivro">
+                        <p for="inputEmprestimoLivro" style="display: none;"> Preencha o campo acima</p>
+                    </div>
+                    <div class="divInputForm">
+                        <label for="inputEmprestimoName">Nome do aluno</label>
+                        <input type="text" name="inputEmprestimoName" id="inputEmprestimoName" class="inputEmprestimoName">
+                        <p for="inputEmprestimoLivro" style="display: none;"> Preencha o campo acima</p>
+                    </div>
+                    <div class="divInputFormDouble">
+                        <div>
+                            <label for="inputEmprestimoName">Turma</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">Agronegócio</option>
+                                <option value="">Enfermagem</option>
+                                <option value="">Finanças</option>
+                                <option value="">Informática</option>
+                                <option value="">Segurança do trabalho</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="inputEmprestimoName">Série</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                                <option value="">1º ANO</option>
+                                <option value="">2º ANO</option>
+                                <option value="">3º ANO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="divInputForm">
+                        <label for="inputEmprestimoName">Data de devolução</label>
+                        <input type="text" name="inputEmprestimoName" id="inputEmprestimoData" class="inputEmprestimoName" readonly>
+                    </div>
+                    <div class="btnEnviarEmprestimo">
+                        <button class="btnConfirmeEmprestimo" id="btnConfirmeEmprestimo" type="button">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+             <div class="mainEmprestimosRight">
+                <div class="calendario">
+                    <div class="wrapper">
+                        <header>
+                          <h2>Calendário</h2>
+                          <!-- <p class="current-date"></p> -->
+                          <div class="icons">
+                            <!-- <span id="prev" class="material-symbols-rounded">chevron_left</span> -->
+                            <p id="prev"></p>
+                            <h1 class="current-date"></h1>
+                            <p id="next"></p>
+                            <!-- <span id="next" class="material-symbols-rounded">chevron_right</span> -->
+                          </div>
+                        </header>
+                        <div class="calendar">
+                          <ul class="weeks">
+                            <li>Dom</li>
+                            <li>Seg</li>
+                            <li>Ter</li>
+                            <li>Qua</li>
+                            <li>Qui</li>
+                            <li>Sex</li>
+                            <li>Sáb</li>
+                          </ul>
+                          <ul class="days"></ul>
+                        </div>
+                      </div>
+                      
+                </div>
+             </div>
             </section>
 
             
@@ -151,16 +212,31 @@
             <!-- MAIN ACERVOS -->
             
             <section class="mainAcervo">
-                <div class="mainAcervoSuperior"><h1>Acervo</h1></div>
-                <div class="mainAcervoCenter"></div>
-                <div class="mainAcervoInferior"></div>
+                <div class="mainAcervoSuperior">
+                    <h1>Acervo</h1>
+                    <input type="search" name="pesquisaAcervo" id="pesquisaAcervo" placeholder="Digite aqui...">
+                </div>
+                <div class="mainAcervoCenter">
+                    <div class="livroAcervo">
+                        
+                    </div>
+                </div>
+                <div class="mainAcervoInferior">
+                    <button class="btnFooterAcervo">
+                        Baixar Acervo
+                    </button>
+                    <button class="btnFooterAcervo">
+                        Cadastrar Livro
+                    </button>
+                </div>
              </section>
         </main>
     </section>
-    <!-- <script src="javascript/anotacoes.js"></script> -->
-    <script src="javascript/bibliotech.js"></script>
+    <script src="javascript/historico.js"></script>
     <script src="javascript/btnMainContent.js"></script>
-    <script src="javascript/headerMobile.js"></script>
     <script src="javascript/bloco.js"></script>
+    <script src="javascript/calendar.js"></script>
+    <script src="javascript/emprestimo.js"></script>
+    <script src="javascript/acervo.js"></script>
 </body>
 </html>
